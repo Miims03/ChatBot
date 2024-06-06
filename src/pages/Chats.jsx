@@ -9,16 +9,19 @@ import Lucario from '../assets/lucario.jpg'
 
 export default function Chats() {
 
-  
+  const iconInput = () => {
+    return <React.Fragment><SearchIcon /></React.Fragment>
+  }
+  console.log(<SearchIcon />)
 
   const convTest = [
     {
       firstname: 'Amine', 
       lastname: 'Chraibi', 
       lastMessage: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut quasi enim eius architecto excepturi natus iure debitis maiores neque accusamus. Harum esse velit voluptate rerum et dignissimos tenetur repellendus inventore?', 
-      nbrMessageNonLus: 0,
+      nbrMessageNonLus: 3,
       time: 4, 
-      ping: false,
+      ping: true,
       img: Lucario
     },
     {
@@ -43,19 +46,8 @@ export default function Chats() {
   return (
     <main className='bg-[#F9FAFC] rounded-3xl h-[97%] min-w-[75%] max-w-[92%] overflow-hidden flex justify-start items-center '>
       <section className='h-[97.5%] w-[32rem] px-3 border-r flex flex-col justify-start items-center py-6 gap-5'>
-        {/* <input type="text" className='rounded-lg py-2 px-3 bg-[#D8D9FF] text-stone-800' placeholder={`${<SearchIcon/>} Search`} ref={} /> */}
-        <TextField
-          className='rounded-lg w-[90%] bg-[#D8D9FF] text-stone-800'
-          placeholder='Search'
-          InputProps={{
-            startAdornment: (
-              <InputAdornment position='start'>
-                <SearchIcon fontSize='medium'/>
-              </InputAdornment>
-            ),
-          }}
-        />
-        {/* <div className=' rotate-45'><PushPinIcon/></div> */}
+        <input type="text" className='rounded-lg py-3 px-5 w-[90%] bg-[#D8D9FF] text-stone-800 outline-0 focus:ring-2 ring-[#9B9CF1]' placeholder={`${iconInput()}`} />
+        
         <div className='bg-scroll max-w-[90%] h-[85%] flex flex-col justify-start items-center gap-2'>
           {convTest.map((conv , index) => (
             <Link 

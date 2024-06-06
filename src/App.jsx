@@ -9,6 +9,7 @@ import Archives from "./pages/Archives";
 import Profile from "./pages/Profile";
 import Setting from "./pages/Setting";
 import Logout from "./pages/Logout";
+import Login from "./pages/Login";
 
 
 
@@ -19,7 +20,7 @@ export default function App() {
       <main className=" bg-[#202022] h-screen w-screen flex justify-start items-center">
         <SideBar />
         <Routes>
-          <Route path='/' element={<Home />} />
+          <Route path='/' element={<Login />} />
           {/* <Route path='/' element={<Navigate to="/chats" />} /> */}
           <Route path='/chats' element={<Chats />} />
           <Route path='/works' element={<Works />} />
